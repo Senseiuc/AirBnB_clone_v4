@@ -2,7 +2,7 @@
  * js file to select amenities and also get status
  */
 $(document).ready(function () {
-    $.ajax('http://127.0.0.1:5001/api/v1/status').done(function (data) {
+    $.ajax('http://0.0.0.0:5001/api/v1/status').done(function (data) {
       if (data.status === 'OK') {
         $('#api_status').addClass('available');
       } else {
@@ -38,7 +38,7 @@ $(document).ready(function () {
     $('.filters button').click(function () {
       $.ajax({
         type: 'POST',
-        url: 'http://127.0.0.1:5001/api/v1/places_search/',
+        url: 'http://0.0.0.0:5001/api/v1/places_search/',
         contentType: 'application/json',
         data: JSON.stringify({ 
             amenities: Object.keys(amenityIds),
