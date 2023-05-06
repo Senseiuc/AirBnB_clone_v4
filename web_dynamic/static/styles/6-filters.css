@@ -102,11 +102,6 @@ button:hover {
     visibility: visible;
 }
 
-.amenities input{
+.amenities .popover input{
     margin-left: 10px;
-}
-
-.amenities > h4{
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
