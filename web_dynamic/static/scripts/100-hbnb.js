@@ -51,7 +51,7 @@ $(document).ready(function () {
     });
 
     $('.stateCheckBox').click(function () {
-        console.log($(this).attr('data-id'))
+        console.log(stateIds)
         if ($(this).prop('checked')) {
           stateIds[$(this).attr('data-id')] = $(this).attr('data-name');
         } else if (!$(this).prop('checked')) {
@@ -62,6 +62,7 @@ $(document).ready(function () {
         } else {
           $('.locations h4').text(Object.values(stateIds).concat(Object.values(cityIds)).join(', '));
         }
+        console.log(stateIds)
     });
     
     $('.cityCheckBox').click(function () {
