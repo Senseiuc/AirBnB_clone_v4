@@ -42,14 +42,13 @@ $(document).ready(function () {
     }).done(function (data) {
       loadPlaces(data);
     });
+  });
 });
-});
-
 
 function loadPlaces (data) {
-    $('section.places').empty();
-    for (const place of data) {
-      const template = `
+  $('section.places').empty();
+  for (const place of data) {
+    const template = `
       <article>
           <div class="title_box">
           <h2>${place.name}</h2>
@@ -64,6 +63,6 @@ function loadPlaces (data) {
           ${place.description}
               </div>
       </article>`;
-      $('section.places').append(template);
-};
-};
+    $('section.places').append(template);
+  }
+}
