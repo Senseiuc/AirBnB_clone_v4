@@ -47,6 +47,7 @@ $(document).ready(function () {
   });
 
 function load_places(data){
+    console.log(data.length)
     for (const place of data) {
         const template = `
   <article>
