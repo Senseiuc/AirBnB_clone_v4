@@ -51,6 +51,7 @@ $(document).ready(function () {
     });
 
     $('.stateCheckBox').click(function () {
+        console.log($(this).attr('data-id'))
         if ($(this).prop('checked')) {
           stateIds[$(this).attr('data-id')] = $(this).attr('data-name');
         } else if (!$(this).prop('checked')) {
