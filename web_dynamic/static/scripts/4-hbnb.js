@@ -63,5 +63,5 @@ function loadPlaces (data) {
             </div>
     </article>`;
     $('section.places').append(template);
-  }
-}
+  };
+};

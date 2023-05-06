@@ -34,7 +34,7 @@ $(document).ready(function () {
   });
 });
 
-function loadPlaces(data){
+function loadPlaces (data) {
   $('section.places').empty();
   for (const place of data) {
     const template = `
