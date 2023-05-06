@@ -37,13 +37,13 @@ $(document).ready(function () {
     $('.filters button').click(function () {
         $.ajax({
             type: 'POST',
-            url: 'http://0.0.0.0:5001/api/v1/places_search/',
+            url: 'http://127.0.0.1:5001/api/v1/places_search/',
             contentType: 'application/json',
             data: JSON.stringify({ amenities: Object.keys(amenityIds) })
         }).done(function (data) {
             load_places(data);
-        })
-    })
+        });
+    });
   });
 
 function load_places(data){
