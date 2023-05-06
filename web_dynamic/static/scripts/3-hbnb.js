@@ -31,11 +31,12 @@ $(document).ready(function () {
       contentType: 'application/json',
       data: JSON.stringify({})
     }).done(function (data) {
-      load_places(data);
+      loadPlaces(data);
     });
 });
 
-function load_places(data){
+function loadPlaces(data){
+  $('section.places').empty();
   for (const place of data) {
       const template = `
 <article>
