@@ -24,34 +24,33 @@ $(document).ready(function () {
     }
   });
 
-
   $.ajax({
-      type: 'POST',
-      url: 'http://127.0.0.1:5001/api/v1/places_search/',
-      contentType: 'application/json',
-      data: JSON.stringify({})
-    }).done(function (data) {
-      load_places(data);
-    });
+    type: 'POST',
+    url: 'http://127.0.0.1:5001/api/v1/places_search/',
+    contentType: 'application/json',
+    data: JSON.stringify({})
+  }).done(function (data) {
+    load_places(data);
+  });
 });
 
-function load_places(data){
+function load_places (data) {
   for (const place of data) {
-      const template = `
+    const template = `
 <article>
   <div class="title_box">
     <h2>${place.name}</h2>
     <div class="price_by_night">$${place.price_by_night}</div>
   </div>
   <div class="information">
-    <div class="max_guest">${ place.max_guest } Guests</div>
-        <div class="number_rooms">${ place.number_rooms } Bedrooms</div>
-        <div class="number_bathrooms">${ place.number_bathrooms } Bathrooms</div>
+    <div class="max_guest">${place.max_guest} Guests</div>
+        <div class="number_rooms">${place.number_rooms} Bedrooms</div>
+        <div class="number_bathrooms">${place.number_bathrooms} Bathrooms</div>
   </div>
       <div class="description">
-    ${ place.description }
+    ${place.description}
       </div>
-</article>`
-      $('section.places').append(template);
-    };
-};
+</article>`;
+    $('section.places').append(template);
+  }
+}
