@@ -1,8 +1,9 @@
 /*
- * js file to select amenities
+ * js file to select amenities and also get status
  */
 
-$.ajax('http://0.0.0.0:5001/api/v1/status').done(function (data) {
+$(document).ready(function () {
+  $.ajax('http://0.0.0.0:5001/api/v1/status').done(function (data) {
     if (data.status === 'OK') {
       $('#api_status').addClass('available');
     } else {
@@ -10,7 +11,6 @@ $.ajax('http://0.0.0.0:5001/api/v1/status').done(function (data) {
     }
   });
 
-$(document).ready(function () {
   const amenityIds = {};
   $('input[type=checkbox]').change(function () {
     if ($(this).prop('checked')) {
